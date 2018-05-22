@@ -31,6 +31,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * We do not own any of the AstroParty UI desgns, concepts, logos, etc. Rusty Moyher owns these UI designs, concepts, logos, etc.
 * Code snippets and boilerplate code from:
 
-"Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers", ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2015 
+  "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers", ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2015 
 
-belong to Jonathan Valvano. I do not take credit for code snippets and boilerplate code from the textbook.
+  belong to Jonathan Valvano. I do not take credit for code snippets and boilerplate code from the textbook.
