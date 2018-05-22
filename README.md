@@ -1,6 +1,9 @@
-# AstroParty
+# Astro Party
 
 University of Texas EE319K Game design lab
+
+We recreated a popular mobile game called Astro Party.
+[Astro Party on the App Store](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8)
 
 ## Demo
 
@@ -28,7 +31,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* We do not own any of the AstroParty UI desgns, concepts, logos, etc. Rusty Moyher owns these UI designs, concepts, logos, etc.
+* We do not own any of the Astro Party UI desgns, concepts, logos, etc. Rusty Moyher owns these UI designs, concepts, logos, etc.
 * Code snippets and boilerplate code from:
 
   "Embedded Systems: Real Time Interfacing to Arm Cortex M Microcontrollers", ISBN: 978-1463590154, Jonathan Valvano, copyright (c) 2015 
