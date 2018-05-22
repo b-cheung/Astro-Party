@@ -13,7 +13,8 @@ gathr is currently an ongoing project that we plan to finish in the near future.
 
 ## Demo
 
-[![EE319K SuperFinals Game Competition]<img width="300" alt="competition" src="http://img.youtube.com/vi/ogT-apOq7TE/1.jpg">](https://youtu.be/ogT-apOq7TE)
+###EE319K SuperFinals Game Competition
+<img width="300" alt="competition" src="http://img.youtube.com/vi/ogT-apOq7TE/1.jpg">](https://youtu.be/ogT-apOq7TE)
 
 ## Screenshots
 
