@@ -1,15 +1,6 @@
 # AstroParty
+
 University of Texas EE319K Game design lab
-
-## How it all started:
-
-### Inspiration: 
-We often find ourselves bored and wanting to go out on weekend evenings, but don’t know where to go or what to do. We tried using Facebook events, but find it too difficult to use, and it was hard to narrow down on events to go to. So, we decided to create an app that lets us find relevant nearby events on a map.
-
-### What it does: 
-The app is a platform that enables users to view events that are going on around them and also post public/private events. The target audience is college students looking for events hosted by other students, student organizations and some businesses. Right now, the app has a working map and lets a registered user create events by selecting a location on a map. The map is updated real time, and the events are visible on the map across different devices.
-
-gathr is currently an ongoing project that we plan to finish in the near future.
 
 ## Demo
 
