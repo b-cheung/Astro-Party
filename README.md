@@ -2,7 +2,8 @@
 
 University of Texas EE319K Game design lab
 
-We recreated a popular mobile game called Astro Party.
+We recreated a popular mobile game called Astro Party on the EK-TM4C123GXL Launchpad.
+
 [Astro Party on the App Store](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8)
 
 ## Demo
