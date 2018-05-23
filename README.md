@@ -5,11 +5,10 @@
 University of Texas EE319K Game Design Lab
 
 We recreated a popular iOS mobile game called [Astro Party](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8) on the EK-TM4C123GXL Launchpad.
-
 Astro Party is a 1v1 game in which each player controls their spaceship and shoot each other. 
 
 ### Basic Rules
-Your ship is always accelerating in the direction it is facing
+Your ship is always accelerating in the direction it is currently facing
 Your ship can only rotate one direction with a button press (clockwise or counter-clockwise)
 Each ship has a maximum of 3 bullets (bullets reload after active ones explode)
 A round ends when one of the ships is destroyed
@@ -19,21 +18,21 @@ The first to reach the point cap is the winner
 ## Features
 
 ### Software:
-Two-player game
-Physics Engine
-* Collision Detection
+* Two-player game
+* Physics Engine
+ * Collision Detection
   * Hitbox Collision Detection
   * Linear Per-pixel Collision Detection
-* Velocity 
-* Acceleration
-Gameplay modes
-* Adjustable Game Length (1,3 or 5 kills)
-* 3 Unique Maps
-Graphics Rendering
-* Virtual Buffer
-* Layered Graphics
-Edge-Triggered Interrupts
-* Pause game
+ * Velocity 
+ * Acceleration
+* Gameplay modes
+ * Adjustable Game Length (1,3 or 5 kills)
+ * 3 Unique Maps
+* Graphics Rendering
+ * Virtual Buffer
+ * Layered Graphics
+* Edge-Triggered Interrupts
+ * Pause game
 
 ### Hardware:
 Three Onboard Buttons (reset, start, and select)
