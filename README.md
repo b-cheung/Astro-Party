@@ -64,7 +64,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 ## Authors
 
 * **Brian Cheung** - Game engine, physics engine, animations, hardware
-* **Sam Wang** - Sound effects, sprites, hardware
+* **Sam Wang** - Sound module and sound effects, sprites, hardware
 
 ## License
 
