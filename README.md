@@ -20,19 +20,19 @@ The first to reach the point cap is the winner
 ### Software:
 * Two-player game
 * Physics Engine
- * Collision Detection
-  * Hitbox Collision Detection
-  * Linear Per-pixel Collision Detection
- * Velocity 
- * Acceleration
+  * Collision Detection
+    * Hitbox Collision Detection
+    * Linear Per-pixel Collision Detection
+  * Velocity 
+  * Acceleration
 * Gameplay modes
- * Adjustable Game Length (1,3 or 5 kills)
- * 3 Unique Maps
+  * Adjustable Game Length (1,3 or 5 kills)
+  * 3 Unique Maps
 * Graphics Rendering
- * Virtual Buffer
- * Layered Graphics
+  * Virtual Buffer
+  * Layered Graphics
 * Edge-Triggered Interrupts
- * Pause game
+  * Pause game
 
 ### Hardware:
 Three Onboard Buttons (reset, start, and select)
