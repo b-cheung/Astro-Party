@@ -8,12 +8,12 @@ We recreated a popular iOS mobile game called [Astro Party](https://itunes.apple
 Astro Party is a 1v1 game in which each player controls their spaceship and shoot each other. 
 
 ### Basic Rules
-Each ship is always accelerating in the direction it is currently facing
-Each ship can only rotate one direction with a button press (clockwise or counter-clockwise)
-Each ship has a maximum of 3 bullets (bullets reload after active ones explode)
-A round ends when one of the ships is destroyed
-A point is earned by destroying the opposing ship
-The first to reach the point cap is the winner
+* Each ship is always accelerating in the direction it is currently facing
+* Each ship can only rotate one direction with a button press (clockwise or counter-clockwise)
+* Each ship has a maximum of 3 bullets (bullets reload after active ones explode)
+* A round ends when one of the ships is destroyed
+* A point is earned by destroying the opposing ship
+* The first to reach the point cap is the winner
 
 ## Features
 
