@@ -11,6 +11,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 * Each ship is always accelerating in the direction it is currently facing
 * Each ship can only rotate one direction with a button press (clockwise or counter-clockwise)
 * Each ship has a maximum of 3 bullets (bullets reload after active ones explode)
+* Power-Ups temporarily give players new abilities
 * A round ends when one of the ships is destroyed
 * A point is earned by destroying the opposing ship
 * The first to reach the point cap is the winner
@@ -25,6 +26,13 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
     * Linear Per-pixel Collision Detection
   * Velocity 
   * Acceleration
+* Gameplay
+  * Destructible Walls
+  * Power-Ups
+    * Laser
+    * Blades
+    * Reverse Rotation
+  * Particles
 * Gameplay modes
   * Adjustable Game Length (1,3 or 5 kills)
   * 3 Unique Maps
