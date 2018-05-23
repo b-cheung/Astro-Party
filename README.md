@@ -42,7 +42,7 @@ The first to reach the point cap is the winner
 * ADC Slider
   * Navigate game menu (settings)
   * Volume control
-* 8-bit DAC
+* 8-bit DAC to Audio Output
   * Sound effects
 * Sitronix ST7735R LCD
 
