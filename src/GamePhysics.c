@@ -116,35 +116,35 @@ void movePlayer(Player *player){
 		if(!(game.walls[i].destroyed)){
 			//detect collision with new position on specific wall
 			if (newX < game.walls[i].x + WALL_SIZE &&
-					newX + PLAYER_WIDTH > game.walls[i].x &&
-					newY > game.walls[i].y - WALL_SIZE &&
-					newY - PLAYER_HEIGHT < game.walls[i].y) {
-						//collision detected
-						//detect collision with new x position
-						if (newX < game.walls[i].x + WALL_SIZE &&
-								newX + PLAYER_WIDTH > game.walls[i].x &&
-								player->y > game.walls[i].y - WALL_SIZE &&
-								player->y - PLAYER_HEIGHT < game.walls[i].y) {
-									//collision in x direction
-									colX = 1;
-								}
-						//detect collision with new y position
-						if (player->x < game.walls[i].x + WALL_SIZE &&
-								player->x + PLAYER_WIDTH > game.walls[i].x &&
-								newY > game.walls[i].y - WALL_SIZE &&
-								newY - PLAYER_HEIGHT < game.walls[i].y) {
-									//collision in y direction
-									colY = 1;
-								}
-					}
+				newX + PLAYER_WIDTH > game.walls[i].x &&
+				newY > game.walls[i].y - WALL_SIZE &&
+				newY - PLAYER_HEIGHT < game.walls[i].y) {
+					//collision detected
+					//detect collision with new x position
+					if (newX < game.walls[i].x + WALL_SIZE &&
+						newX + PLAYER_WIDTH > game.walls[i].x &&
+						player->y > game.walls[i].y - WALL_SIZE &&
+						player->y - PLAYER_HEIGHT < game.walls[i].y) {
+							//collision in x direction
+							colX = 1;
+						}
+					//detect collision with new y position
+					if (player->x < game.walls[i].x + WALL_SIZE &&
+						player->x + PLAYER_WIDTH > game.walls[i].x &&
+						newY > game.walls[i].y - WALL_SIZE &&
+						newY - PLAYER_HEIGHT < game.walls[i].y) {
+							//collision in y direction
+							colY = 1;
+						}
+				}
 		}
 	}
 	
 	//player collision with boundary
 	uint8_t right = (newX+PLAYER_WIDTH-1)>=WIDTH-1, //exceeds right of screen
-					left = newX<0+1, 												//exceeds left of screen
-					top = (newY-PLAYER_HEIGHT+1)<0+1,				//exceeds top of screen
-					bottom = newY>=HEIGHT-1;								//exceeds bottom of screen
+			left = newX<0+1, 												//exceeds left of screen
+			top = (newY-PLAYER_HEIGHT+1)<0+1,				//exceeds top of screen
+			bottom = newY>=HEIGHT-1;								//exceeds bottom of screen
 	uint8_t sum = right+left+top+bottom+(colX+colY);
 	
 	if(sum==2){	//collision with 2 edges
@@ -210,23 +210,23 @@ void shootBullet(Player *player){
 				}
 				else if(player->ammo[i].active){
 					Sound_Shoot();
-				double theta = PI8*player->dir;		//player angle
-				player->ammo[i].active = 1;				//activate bullet
-				
-				//start bullet at player's origin
-				player->ammo[i].x = player->x + PLAYER_WIDTH/2;
-				player->ammo[i].y = player->y - PLAYER_HEIGHT/2;
-				
-				//calculate bullet velocity
-				double dx = cos(theta)*BULLET_SPEED,
-							dy = -sin(theta)*BULLET_SPEED;
-				player->ammo[i].dx = dx;			
-				player->ammo[i].dy = dy;	
-				
-				//direction offset from player sprite
-				double newX = player->ammo[i].x + dx/4, 
-							newY = player->ammo[i].y + dy/4;
-				while(newX <= player->x + PLAYER_WIDTH &&
+					double theta = PI8*player->dir;		//player angle
+					player->ammo[i].active = 1;				//activate bullet
+					
+					//start bullet at player's origin
+					player->ammo[i].x = player->x + PLAYER_WIDTH/2;
+					player->ammo[i].y = player->y - PLAYER_HEIGHT/2;
+					
+					//calculate bullet velocity
+					double dx = cos(theta)*BULLET_SPEED,
+								dy = -sin(theta)*BULLET_SPEED;
+					player->ammo[i].dx = dx;			
+					player->ammo[i].dy = dy;	
+					
+					//direction offset from player sprite
+					double newX = player->ammo[i].x + dx/4, 
+								newY = player->ammo[i].y + dy/4;
+					while(newX <= player->x + PLAYER_WIDTH &&
 						newX + BULLET_WIDTH >= player->x &&
 						newY >= player->y - PLAYER_HEIGHT &&
 						newY - BULLET_HEIGHT <= player->y &&
@@ -234,14 +234,14 @@ void shootBullet(Player *player){
 							newX += dx/4;
 							newY += dy/4;
 						}	
-				player->ammo[i].x = newX;
-				player->ammo[i].y = newY;
-				if(newX < WIDTH-1 && newX > 1 && newY > 1 && newY < HEIGHT-1){
-					(bulletCD(&(player->ammo[i]),player));
-					drawBullet(&(player->ammo[i]));
-				} else {
-					return;
-				}
+					player->ammo[i].x = newX;
+					player->ammo[i].y = newY;
+					if(newX < WIDTH-1 && newX > 1 && newY > 1 && newY < HEIGHT-1){
+						(bulletCD(&(player->ammo[i]),player));
+						drawBullet(&(player->ammo[i]));
+					} else {
+						return;
+					}
 				}
 			}
 		}
@@ -358,25 +358,24 @@ void moveBullets(Player *player){
 uint8_t playerCD(double x, double y, uint8_t w, uint8_t h, Player *player){
 	//player 1 collision		
 	if (player == &p2 && x < p1.x + PLAYER_WIDTH &&
-			x + w > p1.x &&
-			y > p1.y - PLAYER_HEIGHT &&
-			y - h < p1.y) {
-				p1.alive = 0;
-				p2.kills += 1;
-				Sound_Explosion1();
-				return 1;
-			}
+		x + w > p1.x &&
+		y > p1.y - PLAYER_HEIGHT &&
+		y - h < p1.y) {
+			p1.alive = 0;
+			p2.kills += 1;
+			Sound_Explosion1();
+			return 1;
+		}
 	//player 2 collision		
 	if (player == &p1 && x < p2.x + PLAYER_WIDTH &&
-			x + w > p2.x &&
-			y > p2.y - PLAYER_HEIGHT &&
-			y - h < p2.y) {
-				p2.alive = 0;
-				p1.kills += 1;
-				Sound_Explosion2();
-				return 1;
-
-			}	
+		x + w > p2.x &&
+		y > p2.y - PLAYER_HEIGHT &&
+		y - h < p2.y) {
+			p2.alive = 0;
+			p1.kills += 1;
+			Sound_Explosion2();
+			return 1;
+		}	
 	return 0;
 }
 
@@ -417,9 +416,9 @@ uint8_t bulletCD(Bullet *bullet, Player *player){
 	
 	//bullet boundary collision
 	uint8_t right = (bullet->x+BULLET_WIDTH-1)>=WIDTH, //exceeds right of screen
-					left = bullet->x<0, 												//exceeds left of screen
-					top = (bullet->y-BULLET_HEIGHT+1)<0,				//exceeds top of screen
-					bottom = bullet->y>=HEIGHT;								//exceeds bottom of screen
+			left = bullet->x<0, 												//exceeds left of screen
+			top = (bullet->y-BULLET_HEIGHT+1)<0,				//exceeds top of screen
+			bottom = bullet->y>=HEIGHT;								//exceeds bottom of screen
 	
 	uint8_t sum = right+left+top+bottom;
 	
@@ -476,21 +475,21 @@ uint8_t powerUpCD(Player *player){
 		if(game.powerUps[i].active && game.powerUps[i].displayed){
 			//collision with active and displayed powerup
 			if (game.powerUps[i].x < player->x + PLAYER_WIDTH &&
-			game.powerUps[i].x + POWERUP_WIDTH > player->x &&
-			game.powerUps[i].y > player->y - PLAYER_HEIGHT &&
-			game.powerUps[i].y - POWERUP_HEIGHT < player->y) {
-				if(game.powerUps[i].powerUp == Reverse){
-					game.clockwise ^= 1;
-				} else {
-					//set player powerup
-					player->powerUp = game.powerUps[i].powerUp;
-				}
+				game.powerUps[i].x + POWERUP_WIDTH > player->x &&
+				game.powerUps[i].y > player->y - PLAYER_HEIGHT &&
+				game.powerUps[i].y - POWERUP_HEIGHT < player->y) {
+					if(game.powerUps[i].powerUp == Reverse){
+						game.clockwise ^= 1;
+					} else {
+						//set player powerup
+						player->powerUp = game.powerUps[i].powerUp;
+					}
 					//erase powerUp and deactivate
 					game.powerUps[i].active = 0;
 					game.powerUps[i].displayed = 0;
 					game.powerUps[i].powerUpCooldown = POWERUP_COOLDOWN;
 					eraseRect(game.powerUps[i].x,game.powerUps[i].y,POWERUP_WIDTH,POWERUP_HEIGHT);
-				return 1;
+					return 1;
 			}
 		}
 	}
@@ -513,13 +512,13 @@ void shootLaser(Player *player){
 	startX = startX + dx/4, 
 	startY = startY + dy/4;
 	while(startX <= player->x + PLAYER_WIDTH &&
-			startX + BULLET_WIDTH >= player->x &&
-			startY >= player->y - PLAYER_HEIGHT &&
-			startY - BULLET_HEIGHT <= player->y &&
-			startX < WIDTH && startX > 0 && startY > 0 && startY < HEIGHT){
-				startX += dx/4;
-				startY += dy/4;
-			}	
+		startX + BULLET_WIDTH >= player->x &&
+		startY >= player->y - PLAYER_HEIGHT &&
+		startY - BULLET_HEIGHT <= player->y &&
+		startX < WIDTH && startX > 0 && startY > 0 && startY < HEIGHT){
+			startX += dx/4;
+			startY += dy/4;
+		}	
 	stopX = startX;
 	stopY = startY;
 	//while in bounds, increment endX and endY
@@ -542,47 +541,47 @@ void shootLaser(Player *player){
 	//calculate slope from left point, dx>=0
 	dx = stopX-startX;
 	dy = stopY-startY;
-			double m;
-			//calculate slope 
-			if(fabs(dx)>=0.1 && fabs(dy)>=0.1){		//if dy!=0 and dx!=0 within 0.1 error
-				m = dy/dx;
-				if(dy>0){
-					if(fabs(m)<1 && fabs(m-1)>=0.1){
-						dx = 1;		//Xn+1 = Xn + 1
-						dy = m;		//Yn+1 = Yn + m
-					}else if(fabs(m)>1 && fabs(m-1)>=0.1){	//m!=1 within 0.1 error
-						dx = 1/m;		//Xn+1 = Xn + 1/m
-						dy = 1;			//Yn+1 = Yn + 1
-					} else {		//m=1
-						dx = 1;		//Xn+1 = Xn + 1
-						dy = 1;		//Yn+1 = Yn + 1
-					}
-				} else {					//dy<0
-					if(fabs(m)<1 && fabs(m-1)>=0.1){	//m!=1 within 0.1 error
-						dx = 1;		//Xn+1 = Xn + 1
-						dy = m;		//Yn+1 = Yn + m
-					}else if(fabs(m)>1 && fabs(m-1)>=0.1){
-						dx = -1/m;		//Xn+1 = Xn + 1/m
-						dy = -1;			//Yn+1 = Yn - 1
-					} else {		//m=-1
-						dx = 1;		//Xn+1 = Xn + 1
-						dy = -1;		//Yn+1 = Yn - 1
-					}
-				}
-			} else if(fabs(dx)<=0.1){	//dx = 0
-				stopX = startX;
-				if(dy>0){
-					dx = 0;		//Xn+1 = Xn
-					dy = 1;		//Yn+1 = Yn + 1
-				} else{
-					dx = 0;		//Xn+1 = Xn
-					dy = -1;		//Yn+1 = Yn - 1
-				}
-			} else {	//dy = 0	
-				stopY = startY;				
+	double m;
+	//calculate slope 
+	if(fabs(dx)>=0.1 && fabs(dy)>=0.1){		//if dy!=0 and dx!=0 within 0.1 error
+		m = dy/dx;
+		if(dy>0){
+			if(fabs(m)<1 && fabs(m-1)>=0.1){
 				dx = 1;		//Xn+1 = Xn + 1
-				dy = 0;		//Yn+1 = Yn
-			}	
+				dy = m;		//Yn+1 = Yn + m
+			}else if(fabs(m)>1 && fabs(m-1)>=0.1){	//m!=1 within 0.1 error
+				dx = 1/m;		//Xn+1 = Xn + 1/m
+				dy = 1;			//Yn+1 = Yn + 1
+			} else {		//m=1
+				dx = 1;		//Xn+1 = Xn + 1
+				dy = 1;		//Yn+1 = Yn + 1
+			}
+		} else {					//dy<0
+			if(fabs(m)<1 && fabs(m-1)>=0.1){	//m!=1 within 0.1 error
+				dx = 1;		//Xn+1 = Xn + 1
+				dy = m;		//Yn+1 = Yn + m
+			}else if(fabs(m)>1 && fabs(m-1)>=0.1){
+				dx = -1/m;		//Xn+1 = Xn + 1/m
+				dy = -1;			//Yn+1 = Yn - 1
+			} else {		//m=-1
+				dx = 1;		//Xn+1 = Xn + 1
+				dy = -1;		//Yn+1 = Yn - 1
+			}
+		}
+	} else if(fabs(dx)<=0.1){	//dx = 0
+		stopX = startX;
+		if(dy>0){
+			dx = 0;		//Xn+1 = Xn
+			dy = 1;		//Yn+1 = Yn + 1
+		} else{
+			dx = 0;		//Xn+1 = Xn
+			dy = -1;		//Yn+1 = Yn - 1
+		}
+	} else {	//dy = 0	
+		stopY = startY;				
+		dx = 1;		//Xn+1 = Xn + 1
+		dy = 0;		//Yn+1 = Yn
+	}	
 	laserBeam.startX = startX;
 	laserBeam.startY = startY;
 	laserBeam.stopX = stopX;
@@ -595,8 +594,8 @@ void shootLaser(Player *player){
 		drawLaser(startX,startY,LASER_WIDTH,LASER_HEIGHT);
 		laserCD(startX,startY,LASER_WIDTH,LASER_HEIGHT, player);
 		if(fabs(startX-stopX) > 1){	
-				startX += dx;
-				} 
+			startX += dx;
+		} 
 		if(fabs(startY-stopY) > 1) {
 			startY += dy;
 		}
@@ -612,10 +611,10 @@ void laserCD(double x, double y,uint8_t w, uint8_t h, Player *player){
 		if(game.walls[i].destructible && !(game.walls[i].destroyed)){
 			//detect collision with new position on specific destructible wall
 			if (x <= game.walls[i].x + WALL_SIZE &&
-					x + w >= game.walls[i].x &&
-					y >= game.walls[i].y - WALL_SIZE &&
-					y - h < game.walls[i].y) {
-						game.walls[i].destroyed = 1;
+				x + w >= game.walls[i].x &&
+				y >= game.walls[i].y - WALL_SIZE &&
+				y - h < game.walls[i].y) {
+					game.walls[i].destroyed = 1;
 			}	
 		}
 	}

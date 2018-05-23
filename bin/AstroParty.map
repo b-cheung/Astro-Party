@@ -1674,7 +1674,7 @@ Image component sizes
        324         32          0          0          0       5552   adc.o
       3020        410     137146         98      26456      14513   astroparty.o
        220         28          0          0          0       1310   dac.o
-      8048        294          0          8          0      12275   gamephysics.o
+      8048        294          0          8          0      12279   gamephysics.o
        984        132          0         16          0       2784   inputhardware.o
         80         14          0          0          0        240   lcd.o
       2134        104          0          0          0       8621   lcdbuffer.o
@@ -1687,7 +1687,7 @@ Image component sizes
        204         54          0         12          0       1711   timer0.o
 
     ----------------------------------------------------------------------
-     17732       1892     189704        184      27480      63161   Object Totals
+     17732       1892     189704        184      27480      63165   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          8          0          7          2          0          0   (incl. Padding)
 
@@ -1765,8 +1765,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     22912       2230     189992        184      27576      60717   Grand Totals
-     22912       2230     189992        184      27576      60717   ELF Image Totals
+     22912       2230     189992        184      27576      60721   Grand Totals
+     22912       2230     189992        184      27576      60721   ELF Image Totals
      22912       2230     189992        184          0          0   ROM Totals
 
 ==============================================================================
