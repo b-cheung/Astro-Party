@@ -1,11 +1,12 @@
 # Astro Party
 
+## Overview
+
 University of Texas EE319K Game Design Lab
 
 We recreated a popular iOS mobile game called [Astro Party](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8) on the EK-TM4C123GXL Launchpad.
 
-## Overview
-1v1 game in which each player controls their spaceship and shoot each other. 
+Astro Party is a 1v1 game in which each player controls their spaceship and shoot each other. 
 
 ### Basic Rules
 Your ship is always accelerating in the direction it is facing
