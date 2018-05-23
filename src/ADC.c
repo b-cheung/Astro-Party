@@ -34,13 +34,13 @@ void ADC_Init(void){
 	delay = SYSCTL_RCGCADC_R;
 	delay = SYSCTL_RCGCADC_R;
 	ADC0_PC_R = 0x1;            // 7) configure for 125K 
-  ADC0_SSPRI_R = 0x123;       // 8) Seq 3 is highest priority
-  ADC0_ACTSS_R &= ~0x8;       // 9) disable sample sequencer 3
-  ADC0_EMUX_R &= ~0xF000;     // 10) seq3 is software trigger
-  ADC0_SSMUX3_R = (ADC0_SSMUX3_R&0xFFFFFFF0)+5;  // 11) Ain5 (PD2)
-  ADC0_SSCTL3_R = 0x6;        // 12) no TS0 D0, yes IE0 END0
-  ADC0_IM_R &= ~0x8;          // 13) disable SS3 interrupts
-  ADC0_ACTSS_R |= 0x8;        // 14) enable sample sequencer 3
+	ADC0_SSPRI_R = 0x123;       // 8) Seq 3 is highest priority
+	ADC0_ACTSS_R &= ~0x8;       // 9) disable sample sequencer 3
+	ADC0_EMUX_R &= ~0xF000;     // 10) seq3 is software trigger
+	ADC0_SSMUX3_R = (ADC0_SSMUX3_R&0xFFFFFFF0)+5;  // 11) Ain5 (PD2)
+	ADC0_SSCTL3_R = 0x6;        // 12) no TS0 D0, yes IE0 END0
+	ADC0_IM_R &= ~0x8;          // 13) disable SS3 interrupts
+	ADC0_ACTSS_R |= 0x8;        // 14) enable sample sequencer 3
 	
 }
 
@@ -51,19 +51,19 @@ void ADC_Init(void){
 // measures from PD2, analog channel 5
 uint32_t ADC_In(void){  
 	uint32_t data;
-  ADC0_PSSI_R = 0x0008;            
-  while((ADC0_RIS_R&0x08)==0){};   
-  data = ADC0_SSFIFO3_R&0xFFF; 
-  ADC0_ISC_R = 0x0008; 
-  return data;
+	ADC0_PSSI_R = 0x0008;            
+	while((ADC0_RIS_R&0x08)==0){};   
+	data = ADC0_SSFIFO3_R&0xFFF; 
+	ADC0_ISC_R = 0x0008; 
+	return data;
 }
 
 uint8_t menuScale(uint32_t input){
-		if(input <= 1364){
-			return 2;
-		} else if(input > 1364 && input <= 2728){
-			return 1;
-		} else {
-			return 0;
-		}
+	if(input <= 1364){
+		return 2;
+	} else if(input > 1364 && input <= 2728){
+		return 1;
+	} else {
+		return 0;
+	}
 }

@@ -20,7 +20,7 @@
  For more information about my classes, my research, and my books, see
  http://users.ece.utexas.edu/~valvano/
  */
- #include "Timer0.h"
+#include "Timer0.h"
 #include "DAC.h"
 #include "tm4c123gh6pm.h"
 
@@ -38,28 +38,28 @@ static uint32_t pd;
 // Outputs: none
 void Timer0_Init(/*void(*task)(void),*/ uint32_t period){
   SYSCTL_RCGCTIMER_R |= 0x01;   // 0) activate TIMER0
-//  PeriodicTask0 = task;          // user function
+  //  PeriodicTask0 = task;          // user function
   TIMER0_CTL_R = 0x00000000;    // 1) disable TIMER0A during setup
   TIMER0_CFG_R = 0x00000000;    // 2) configure for 32-bit mode
   TIMER0_TAMR_R = 0x00000002;   // 3) configure for periodic mode, default down-count settings
   TIMER0_TAILR_R = period-1;    // 4) reload value
-	pd = period - 1;
+  pd = period - 1;
   TIMER0_TAPR_R = 0;            // 5) bus clock resolution
   TIMER0_ICR_R = 0x00000001;    // 6) clear TIMER0A timeout flag
   TIMER0_IMR_R = 0x00000001;    // 7) arm timeout interrupt
   NVIC_PRI4_R = (NVIC_PRI4_R&0x00FFFFFF)|0x20000000; // 8) priority 1
-// interrupts enabled in the main program after all devices initialized
-// vector number 35, interrupt number 19
+  // interrupts enabled in the main program after all devices initialized
+  // vector number 35, interrupt number 19
   NVIC_EN0_R = 1<<19;           // 9) enable IRQ 19 in NVIC
-//  TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
+  //  TIMER0_CTL_R = 0x00000001;    // 10) enable TIMER0A
 }
 
 
 void Timer0A_SoundSet(const uint8_t *pt, uint32_t size){
-		TIMER0_TAILR_R = pd;										//reload
-		TIMER0_CTL_R = 0x00000001;							//enable timer0
-		soundPt = pt;														//pointer to sound effect array
-		arraySize = size + soundPt;							//size
+  TIMER0_TAILR_R = pd;										//reload
+  TIMER0_CTL_R = 0x00000001;							//enable timer0
+  soundPt = pt;														//pointer to sound effect array
+  arraySize = size + soundPt;							//size
 	
 }
 

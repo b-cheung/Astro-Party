@@ -154,16 +154,16 @@ void movePlayer(Player *player){
 	}
 	if(right){             		//exceeds right of screen
 		colX=1;
-  }
+	}
 	if(left){                 //exceeds left of screen
 		colX=1;
-  }
-  if(top){                  //exceeds top of screen
+	}
+	if(top){                  //exceeds top of screen
 		colY=1;
 	}
-  if(bottom){               //exceeds bottom of screen
+	if(bottom){               //exceeds bottom of screen
 		colY=1;
-  }
+	}
 	
 	//move player if collcion in direction is not detected
 	if(!colX){

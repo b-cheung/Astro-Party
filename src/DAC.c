@@ -24,8 +24,8 @@ void DAC_Init(void){
 	GPIO_PORTB_AMSEL_R &= ~0xFF; //disable analog function on PB7-0
 	GPIO_PORTB_AFSEL_R &= ~0xFF; //regular function on PB7-0
 	GPIO_PORTB_DR8R_R |= 0xFF;
-  GPIO_PORTB_DIR_R |= 0xFF;    //outputs on PB7-0
-  GPIO_PORTB_DEN_R |= 0xFF;    //enable digital on PB7-0
+	GPIO_PORTB_DIR_R |= 0xFF;    //outputs on PB7-0
+	GPIO_PORTB_DEN_R |= 0xFF;    //enable digital on PB7-0
 }
 
 // **************DAC_Out*********************
@@ -41,5 +41,5 @@ void DAC_Out(uint8_t data){
 }
 
 double audioScale(double input){
-		return 1- input/4095;
+	return 1- input/4095;
 }

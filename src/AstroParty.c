@@ -85,10 +85,10 @@ uint8_t startGame = 0 ;
 
 int main(void){
 	//initialize hardware
-  PLL_Init(Bus80MHz);       // Bus clock is 80 MHz 
+	PLL_Init(Bus80MHz);       // Bus clock is 80 MHz 
 	Port_Init();
 	Sound_Init();
-  Output_Init();  					//init LCD
+	Output_Init();  					//init LCD
 	
 	stage = StartScreen;
 	ST7735_DrawBitmap16(0, 159, Astro_Start_Menu, 128,160);
@@ -109,7 +109,7 @@ int main(void){
 	while(p1.kills!=game.kills && p2.kills!=game.kills){
 		update();
 		ST7735_DrawBitmap8(0, 159, screenBuffer, 128,160);
-  }
+	}
 	
 	stage = Win;
 	win();
@@ -559,39 +559,39 @@ void update(void){
 	if(game.paused){
 		pauseGame();
 	}
-		if(PEStatus){
-			if(portE&0x1){
-			rotatePlayer(&p1);
-			}
-			if((portE&0x2)>>1){
-				shootBullet(&p1);	
-			}
-			if((portE&0x4)>>2){
-			rotatePlayer(&p2);
-			}
-			if((portE&0x8)>>3){
-				shootBullet(&p2);	
-			}
-			PEStatus = 0;
-		}	
-		acceleratePlayer(&p1);
-		acceleratePlayer(&p2);
-		moveBullets(&p1);
-		moveBullets(&p2);
-		if(!p1.alive || !p2.alive){
-			//display score?
-			ST7735_DrawBitmap8(0, 159, screenBuffer, 128,160);
-			uint32_t wait = 1000000;
-			while(wait!=0){
-				wait--;
-			}
-			resetGame();
-			return;
+	if(PEStatus){
+		if(portE&0x1){
+		rotatePlayer(&p1);
 		}
-		movePlayer(&p1);
-		movePlayer(&p2);
-		spawnPowerUps();
-		drawWalls();
+		if((portE&0x2)>>1){
+			shootBullet(&p1);	
+		}
+		if((portE&0x4)>>2){
+		rotatePlayer(&p2);
+		}
+		if((portE&0x8)>>3){
+			shootBullet(&p2);	
+		}
+		PEStatus = 0;
+	}	
+	acceleratePlayer(&p1);
+	acceleratePlayer(&p2);
+	moveBullets(&p1);
+	moveBullets(&p2);
+	if(!p1.alive || !p2.alive){
+		//display score?
+		ST7735_DrawBitmap8(0, 159, screenBuffer, 128,160);
+		uint32_t wait = 1000000;
+		while(wait!=0){
+			wait--;
+		}
+		resetGame();
+		return;
+	}
+	movePlayer(&p1);
+	movePlayer(&p2);
+	spawnPowerUps();
+	drawWalls();
 
 }
 

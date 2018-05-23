@@ -51,7 +51,7 @@ typedef struct Player {
 	const uint8_t *sprites[16];
 	Bullet ammo[PLAYER_AMMO];
 	uint8_t shotCooldown;
-  uint8_t alive;
+	uint8_t alive;
 	uint8_t kills;
 	enum PowerUpEnum powerUp;
 } Player;

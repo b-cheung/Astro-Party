@@ -25,24 +25,24 @@ void draw(int16_t x, int16_t y, const uint8_t *image, uint8_t w, uint8_t h){
 	
 	int16_t ogWidth = w, ogHeight = h;
 	uint16_t startR = 0, skipC = 0;
-  if(x>=WIDTH || (y-h+1)>=HEIGHT || (x+w)<=0 || y<0) return; //image is totally off the screen, do nothing
-  if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
-  
-  if((x+w-1)>=WIDTH){             //image exceeds right of screen
-    w = WIDTH-x;
-  }
-  if((y-h+1)<0){                  //image exceeds top of screen
-    h = y+1;
-  }
-  if(x<0){                        //image exceeds left of screen
-    w = w+x;
+	if(x>=WIDTH || (y-h+1)>=HEIGHT || (x+w)<=0 || y<0) return; //image is totally off the screen, do nothing
+	if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
+	
+	if((x+w-1)>=WIDTH){             //image exceeds right of screen
+	  w = WIDTH-x;
+	}
+	if((y-h+1)<0){                  //image exceeds top of screen
+	  h = y+1;
+	}
+	if(x<0){                        //image exceeds left of screen
+		w = w+x;
 		skipC = -x;
 		x = 0;
-  }
-  if(y>=HEIGHT){                  //image exceeds bottom of screen
+	}
+	if(y>=HEIGHT){                  //image exceeds bottom of screen
 		startR = ogHeight - (h-(y-HEIGHT+1));
-    y = HEIGHT-1;
-  }
+	    y = HEIGHT-1;
+	}
 
 	uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;				//calculate corresponding screenBuffer coordinate of bottom left corner of image
 	for(uint8_t r=startR; r<h; r++){											
@@ -66,24 +66,24 @@ void drawRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t color) {
 	int16_t ogWidth = w, ogHeight = h;
   
 	if(x>=WIDTH || (y-h+1)>=HEIGHT || (x+w)<=0 || y<0) return; //image is totally off the screen, do nothing
-  if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
-  
-  if((x+w-1)>=WIDTH){             //image exceeds right of screen
-    w = WIDTH-x;
-  }
-  if((y-h+1)<0){                  //image exceeds top of screen
-    h = y+1;
-  }
-  if(x<0){                        //image exceeds left of screen
-    w = w+x;
-    x = 0;
-  }
-  if(y>=HEIGHT){                  //image exceeds bottom of screen
-    h = h-(y-HEIGHT+1);
-    y = HEIGHT-1;
-  }
+	if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
 	
-  uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;				//calculate corresponding screenBuffer coordinate of bottom left corner of rect
+	if((x+w-1)>=WIDTH){             //image exceeds right of screen
+	  w = WIDTH-x;
+	}
+	if((y-h+1)<0){                  //image exceeds top of screen
+	  h = y+1;
+	}
+	if(x<0){                        //image exceeds left of screen
+	  w = w+x;
+	  x = 0;
+	}
+	if(y>=HEIGHT){                  //image exceeds bottom of screen
+	    h = h-(y-HEIGHT+1);
+	    y = HEIGHT-1;
+  	}
+	
+	uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;		//calculate corresponding screenBuffer coordinate of bottom left corner of rect
 	for(uint8_t r=0; r<h; r++){											
 		for(uint8_t c=0; c<w; c++){
 			if(r==0 || r==ogHeight-1 || c==0 || c==ogWidth-1){	//if edge 
@@ -99,24 +99,24 @@ void drawRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t color) {
 //draw filled rectangle
 void fillRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t color) {  
 	if(x>=WIDTH || (y-h+1)>=HEIGHT || (x+w)<=0 || y<0) return; //image is totally off the screen, do nothing
-  if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
-  
-  if((x+w-1)>=WIDTH){             //image exceeds right of screen
-    w = WIDTH-x;
-  }
-  if((y-h+1)<0){                  //image exceeds top of screen
-    h = y+1;
-  }
-  if(x<0){                        //image exceeds left of screen
-    w = w+x;
-    x = 0;
-  }
-  if(y>=HEIGHT){                  //image exceeds bottom of screen
-    h = h-(y-HEIGHT+1);
-    y = HEIGHT-1;
-  }
+	if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
 	
-  uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;				//calculate corresponding screenBuffer coordinate of bottom left corner of rect
+	if((x+w-1)>=WIDTH){             //image exceeds right of screen
+	  w = WIDTH-x;
+	}
+	if((y-h+1)<0){                  //image exceeds top of screen
+	  h = y+1;
+	}
+	if(x<0){                        //image exceeds left of screen
+	  w = w+x;
+	  x = 0;
+	}
+	if(y>=HEIGHT){                  //image exceeds bottom of screen
+	    h = h-(y-HEIGHT+1);
+	    y = HEIGHT-1;
+	}
+	
+	uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;	//calculate corresponding screenBuffer coordinate of bottom left corner of rect
 	for(uint8_t r=0; r<h; r++){											
 		for(uint8_t c=0; c<w; c++){
 				screenBuffer[sbPixel+c] = color;		//draw corresponding color onto screenBuffer
@@ -128,24 +128,24 @@ void fillRect(int16_t x, int16_t y, uint8_t w, uint8_t h, uint8_t color) {
 //fill rectangle with background
 void eraseRect(int16_t x, int16_t y, uint8_t w, uint8_t h) {
 	if(x>=WIDTH || (y-h+1)>=HEIGHT || (x+w)<=0 || y<0) return; //image is totally off the screen, do nothing
-  if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
-  
-  if((x+w-1)>=WIDTH){             //image exceeds right of screen
-    w = WIDTH-x;
-  }
-  if((y-h+1)<0){                  //image exceeds top of screen
-    h = y+1;
-  }
-  if(x<0){                        //image exceeds left of screen
-    w = w+x;
-    x = 0;
-  }
-  if(y>=HEIGHT){                  //image exceeds bottom of screen
-    h = h-(y-HEIGHT+1);
-    y = HEIGHT-1;
-  }
+	if(w>WIDTH || h>HEIGHT) return; //image is too wide for the screen, do nothing
 	
-  uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;				//calculate corresponding screenBuffer coordinate of bottom left corner of region
+	if((x+w-1)>=WIDTH){             //image exceeds right of screen
+	  w = WIDTH-x;
+	}
+	if((y-h+1)<0){                  //image exceeds top of screen
+	  h = y+1;
+	}
+	if(x<0){                        //image exceeds left of screen
+	  w = w+x;
+	  x = 0;
+	}
+	if(y>=HEIGHT){                  //image exceeds bottom of screen
+	    h = h-(y-HEIGHT+1);
+	    y = HEIGHT-1;
+	}
+	
+	uint16_t sbPixel=(WIDTH*(HEIGHT-(int16_t)y-1))+x;				//calculate corresponding screenBuffer coordinate of bottom left corner of region
 	for(uint8_t r=0; r<h; r++){											
 		for(uint8_t c=0; c<w; c++){
 				screenBuffer[sbPixel+c] = game.map[sbPixel+c];
