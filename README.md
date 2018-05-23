@@ -35,16 +35,16 @@ The first to reach the point cap is the winner
   * Pause game
 
 ### Hardware:
-Three Onboard Buttons (reset, start, and select)
-Four Buttons (two for each player)
-* Shoot
-* Rotate ship
-ADC Slider
-* Navigate game menu (settings)
-* Volume control
-8-bit DAC
-* Sound effects
-Sitronix ST7735R LCD
+* Three Onboard Buttons (reset, start, and select)
+* Four Buttons (two for each player)
+  * Shoot
+  * Rotate ship
+* ADC Slider
+  * Navigate game menu (settings)
+  * Volume control
+* 8-bit DAC
+  * Sound effects
+* Sitronix ST7735R LCD
 
 ## Demo
 
