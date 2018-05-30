@@ -62,7 +62,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 
 <img width="295" alt="screenshot9" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%209.png"><img width="295" alt="screenshot7" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%207.png"><img width="295" alt="screenshot4" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%204.png"><img width="295" alt="screenshot2" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%202.png"><img width="295" alt="screenshot6" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%206.png"><img width="295" alt="screenshot5" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%205.png"><img width="295" alt="screenshot1" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%201.png"><img width="295" alt="screenshot8" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%208.png"><img width="295" alt="screenshot3" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%203.png">
 
-## EE319K SuperFinals Game Competition:
+## EE319K SuperFinals Game Competition (3rd Place team):
 
 [<img width="300" alt="competition" src="http://img.youtube.com/vi/ogT-apOq7TE/1.jpg">](https://youtu.be/ogT-apOq7TE)
 
