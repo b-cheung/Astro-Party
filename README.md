@@ -56,13 +56,15 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 
 ## Demo
 
-### EE319K SuperFinals Game Competition:
-
-[<img width="300" alt="competition" src="http://img.youtube.com/vi/ogT-apOq7TE/1.jpg">](https://youtu.be/ogT-apOq7TE)
+[<img width="300" alt="demo" src="http://img.youtube.com/vi/ogT-q_EWK4ydNm0/0.jpg">](https://youtu.be/q_EWK4ydNm0)
 
 ## Screenshots
 
 <img width="213" alt="gathr screenshot" src="https://user-images.githubusercontent.com/16355946/35762693-ec45b69c-0860-11e8-8682-20cc0c9211ae.png"><img width="657" alt="prototype" src="https://user-images.githubusercontent.com/16355946/35762571-3855235e-085e-11e8-99c8-4fe74ef209d6.png">
+
+## EE319K SuperFinals Game Competition:
+
+[<img width="300" alt="competition" src="http://img.youtube.com/vi/ogT-apOq7TE/1.jpg">](https://youtu.be/ogT-apOq7TE)
 
 ## Built With
 
