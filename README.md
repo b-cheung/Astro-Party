@@ -4,7 +4,7 @@
 
 University of Texas EE319K Game Design Lab
 
-We recreated a popular iOS mobile game called [Astro Party](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8) on the EK-TM4C123GXL Launchpad.
+We recreated a popular iOS mobile game called [Astro Party](https://itunes.apple.com/us/app/astro-party/id904693943?mt=8) on the EK-TM4C123GXL Microcontroller.
 Astro Party is a 1v1 game in which each player controls their spaceship and shoot each other. 
 
 ### Basic Rules
@@ -72,7 +72,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 ## Authors
 
 * **Brian Cheung** - Game engine, physics engine, animations, hardware
-* **Sam Wang** - Sound module and sound effects, sprites, hardware
+* **Samuel Wang** - Sound module, sprites, hardware
 
 ## License
 
