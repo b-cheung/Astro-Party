@@ -56,7 +56,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 
 ## Demo
 
-[<img width="300" alt="demo" src="http://img.youtube.com/vi/ogT-q_EWK4ydNm0/0.jpg">](https://youtu.be/q_EWK4ydNm0)
+[<img width="300" alt="demo" src="http://img.youtube.com/vi/q_EWK4ydNm0/0.jpg">](https://youtu.be/q_EWK4ydNm0)
 
 ## Screenshots
 
