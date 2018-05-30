@@ -60,7 +60,7 @@ Astro Party is a 1v1 game in which each player controls their spaceship and shoo
 
 ## Screenshots
 
-<img width="213" alt="screenshot" src="https://raw.github.com/b-cheung/Astro-Party/screenshots/Astro-Party-Screenshot-1.png)"><img width="657" alt="screenshot" src="https://raw.github.com/b-cheung/Astro-Party/screenshots/Astro-Party-Screenshot-2.png">
+<img width="213" alt="screenshot" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%201.png)"><img width="657" alt="screenshot" src="https://github.com/b-cheung/Astro-Party/blob/master/screenshots/Astro%20Party%20Screenshot%202.png">
 
 ## EE319K SuperFinals Game Competition:
 
